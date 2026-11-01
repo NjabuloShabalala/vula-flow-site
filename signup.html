@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join the early list | Vula Flow</title>
+<meta name="description" content="Leave your details to be among the first buyers and suppliers through the door at Vula Flow.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.wrap{padding:0 clamp(20px,5vw,64px)}
+.inner{max-width:1200px;margin:0 auto}
+.serif{font-family:'Fraunces',Georgia,serif}
+.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A8431F}
+.card{background:#FFFFFF;border:1px solid rgba(15,42,67,.18);border-radius:6px;padding:clamp(24px,4vw,40px)}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{padding:0;font-size:15px;font-weight:600;margin-bottom:12px}
+.choices{display:flex;flex-wrap:wrap;gap:14px}
+.choice{flex:1 1 200px;position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice-body{display:flex;flex-direction:column;gap:4px;min-height:84px;justify-content:center;padding:16px 20px;border:1.5px solid rgba(15,42,67,.5);border-radius:4px;background:#FFFFFF;transition:background-color 160ms ease-out,color 160ms ease-out}
+.choice-body strong{font-size:18px;font-weight:700}
+.choice-body span{font-size:14px;color:#4A5B6C}
+.choice input:checked + .choice-body{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.choice input:checked + .choice-body span{color:rgba(247,244,236,.85)}
+.choice input:focus-visible + .choice-body{outline:2px solid var(--ink);outline-offset:3px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label,.field .lbl{font-size:15px;font-weight:600}
+.field .hint{font-size:13px;color:#4A5B6C;margin:0}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  font:inherit;font-size:16px;min-height:52px;padding:12px 14px;width:100%;
+  border:1px solid rgba(15,42,67,.5);border-radius:4px;background:#FFFFFF;color:var(--ink)}
+textarea{min-height:104px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.stack{display:flex;flex-direction:column;gap:22px}
+.radios{display:flex;flex-wrap:wrap;gap:12px 24px}
+.radios label{display:flex;align-items:center;gap:10px;min-height:44px;font-size:16px;font-weight:500;cursor:pointer}
+.radios input{width:22px;height:22px;margin:0;accent-color:var(--ink)}
+.consent{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.55;color:#3D4F61}
+.consent input{width:24px;height:24px;margin:0;flex:none;accent-color:var(--ink)}
+.consent a{text-decoration:underline}
+.submit{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 36px;border:0;border-radius:4px;background:var(--accent);color:#FFFFFF;font:inherit;font-size:18px;font-weight:600;cursor:pointer;width:100%}
+.submit:hover{opacity:.9}
+.submit:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.submit[disabled]{opacity:.6;cursor:wait}
+.err{margin:0;padding:12px 14px;border:1px solid #A8431F;border-radius:4px;color:#7A2E12;background:#FCEDE6;font-size:15px;line-height:1.5}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:24px 0">
+    <a href="index.html" aria-label="Vula Flow home" style="display:flex;align-items:center;gap:10px">
+      <svg width="26" height="28" viewBox="0 0 26 28" fill="none" stroke="#C2512F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26V13a10 10 0 0 1 20 0v13"/><path d="M13 26V9"/></svg>
+      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:-.01em">Vula Flow</span>
+    </a>
+    <nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:500">
+      <a href="buyers.html">For buyers</a>
+      <a href="suppliers.html">For suppliers</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(72px,9vw,128px)">
+  <div class="inner" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:48px 80px">
+
+    <div style="flex:5 1 340px;min-width:0;max-width:520px">
+      <p class="eyebrow">Early access</p>
+      <h1 class="serif" style="margin:24px 0 0;font-weight:500;font-size:clamp(40px,5.6vw,68px);line-height:1.05;letter-spacing:-.02em">Be among the first through the <em style="font-style:italic;color:#A8431F">door.</em></h1>
+      <p style="margin:28px 0 0;font-size:19px;line-height:1.6;color:#3D4F61">Vula Flow is opening to its first buyers and suppliers. Leave your details and we will contact you when your side opens.</p>
+      <p style="margin:28px 0 0;display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.55;color:#3D4F61">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:#A8431F"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span>We ask for contact details only. No ID numbers, bank details or company documents.</span>
+      </p>
+    </div>
+
+    <div style="flex:7 1 440px;min-width:0;max-width:640px">
+      <div class="card" id="panel">
+
+        <form id="f" novalidate>
+          <div class="stack">
+            <fieldset>
+              <legend>I am a</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="type" value="buyer" id="t-buyer"><span class="choice-body"><strong>Buyer</strong><span>Procurement or ESD team</span></span></label>
+                <label class="choice"><input type="radio" name="type" value="supplier" id="t-supplier"><span class="choice-body"><strong>Supplier</strong><span>Small business</span></span></label>
+              </div>
+            </fieldset>
+
+            <p id="pick" style="margin:0;font-size:15px;color:#4A5B6C">Choose one to continue.</p>
+
+            <!-- BUYER -->
+            <fieldset id="s-buyer" hidden disabled>
+              <div class="stack">
+                <div class="field"><label for="b-name">Your name</label><input type="text" id="b-name" name="name" autocomplete="name" required data-label="Name"></div>
+                <div class="field"><label for="b-email">Work email</label><input type="email" id="b-email" name="email" autocomplete="email" required data-label="Work email"></div>
+                <div class="field"><label for="b-company">Company</label><input type="text" id="b-company" name="company" autocomplete="organization" required data-label="Company"></div>
+                <div class="field"><label for="b-role">Your role</label><input type="text" id="b-role" name="role" autocomplete="organization-title" required data-label="Role"></div>
+                <div class="field"><label for="b-buys">What do you buy?</label><textarea id="b-buys" name="buys" data-label="What they buy"></textarea><p class="hint">For example catering, security, printing or transport. A line is enough.</p></div>
+              </div>
+            </fieldset>
+
+            <!-- SUPPLIER -->
+            <fieldset id="s-supplier" hidden disabled>
+              <div class="stack">
+                <div class="field"><label for="s-business">Business name</label><input type="text" id="s-business" name="business" autocomplete="organization" required data-label="Business name"></div>
+                <div class="field"><label for="s-name">Your name</label><input type="text" id="s-name" name="name" autocomplete="name" required data-label="Name"></div>
+                <div class="field"><label for="s-phone">WhatsApp or phone number</label><input type="tel" id="s-phone" name="phone" autocomplete="tel" inputmode="tel" required data-label="Phone or WhatsApp"></div>
+                <div class="field">
+                  <label for="s-province">Province</label>
+                  <select id="s-province" name="province" required data-label="Province">
+                    <option value="">Choose a province</option>
+                    <option>Eastern Cape</option><option>Free State</option><option>Gauteng</option><option>KwaZulu-Natal</option><option>Limpopo</option><option>Mpumalanga</option><option>Northern Cape</option><option>North West</option><option>Western Cape</option>
+                  </select>
+                </div>
+                <div class="field"><label for="s-supply">What do you supply?</label><textarea id="s-supply" name="supply" required data-label="What they supply"></textarea><p class="hint">For example catering, cleaning, printing or transport.</p></div>
+                <fieldset class="field" data-label="CIPC registered">
+                  <legend class="lbl" style="margin-bottom:8px">Is your business registered with CIPC?</legend>
+                  <div class="radios">
+                    <label><input type="radio" name="cipc" value="Yes" required> Yes</label>
+                    <label><input type="radio" name="cipc" value="No"> No</label>
+                    <label><input type="radio" name="cipc" value="In progress"> In progress</label>
+                  </div>
+                </fieldset>
+              </div>
+            </fieldset>
+
+            <!-- shared -->
+            <div id="shared" class="stack" hidden>
+              <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+              <label class="consent"><input type="checkbox" id="consent" name="consent" required><span>I agree that Vula Flow may use these details to contact me about early access. I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a>, and I know I can withdraw my consent at any time.</span></label>
+              <p class="err" id="err" role="alert" hidden></p>
+              <button type="submit" class="submit" id="go">Join the early list</button>
+            </div>
+          </div>
+        </form>
+
+        <noscript><p class="err">This form needs JavaScript. Please write to shabalala@bnzgroup.co.za instead.</p></noscript>
+
+        <div id="thanks" hidden tabindex="-1">
+          <div style="width:52px;height:52px;border-radius:999px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </div>
+          <h2 class="serif" style="margin:24px 0 0;font-weight:500;font-size:clamp(30px,4vw,40px);line-height:1.1;letter-spacing:-.015em">Thank you.</h2>
+          <p id="thanks-text" style="margin:16px 0 0;font-size:18px;line-height:1.6;color:#3D4F61">We have your details and will be in touch when your side opens.</p>
+          <a href="index.html" style="margin-top:28px;display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:1px solid var(--ink);border-radius:4px;font-size:16px;font-weight:600">Back to the home page</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div class="inner" style="border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C">
+    <span>© 2026 Vula Flow</span>
+    <span style="display:flex;flex-wrap:wrap;gap:24px">
+      <a href="mailto:shabalala@bnzgroup.co.za">shabalala@bnzgroup.co.za</a>
+      <a href="privacy.html">Privacy</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+// Paste the address your form service gives you between the quotes, for example
+// "https://formspree.io/f/abcdwxyz". While this is empty, the form opens a
+// pre-filled email to the address below instead, so nothing is lost.
+var FORM_ENDPOINT = "";
+var CONTACT = "shabalala@bnzgroup.co.za";
+
+(function () {
+  var form = document.getElementById('f');
+  var sBuyer = document.getElementById('s-buyer');
+  var sSupplier = document.getElementById('s-supplier');
+  var shared = document.getElementById('shared');
+  var pick = document.getElementById('pick');
+  var err = document.getElementById('err');
+  var go = document.getElementById('go');
+  var thanks = document.getElementById('thanks');
+  var thanksText = document.getElementById('thanks-text');
+  var current = '';
+
+  function setType(t) {
+    current = t;
+    var b = t === 'buyer', s = t === 'supplier';
+    sBuyer.hidden = !b; sBuyer.disabled = !b;
+    sSupplier.hidden = !s; sSupplier.disabled = !s;
+    shared.hidden = !(b || s);
+    pick.hidden = (b || s);
+    err.hidden = true;
+    document.getElementById('t-buyer').checked = b;
+    document.getElementById('t-supplier').checked = s;
+  }
+
+  var radios = form.querySelectorAll('input[name="type"]');
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', function (e) { setType(e.target.value); });
+  }
+
+  var q = new URLSearchParams(window.location.search).get('type');
+  if (q === 'buyer' || q === 'supplier') setType(q);
+
+  function showError(msg) { err.textContent = msg; err.hidden = false; err.scrollIntoView({ block: 'nearest' }); }
+
+  function collect() {
+    var section = current === 'buyer' ? sBuyer : sSupplier;
+    var data = { type: current };
+    var items = section.querySelectorAll('[data-label]');
+    for (var i = 0; i < items.length; i++) {
+      var el = items[i], label = el.getAttribute('data-label');
+      if (el.tagName === 'FIELDSET') {
+        var c = el.querySelector('input:checked');
+        data[label] = c ? c.value : '';
+      } else {
+        data[label] = el.value.trim();
+      }
+    }
+    data['Consent given'] = 'Yes';
+    data['Submitted'] = new Date().toISOString();
+    return data;
+  }
+
+  function finish(text) {
+    form.hidden = true;
+    thanksText.textContent = text;
+    thanks.hidden = false;
+    thanks.focus();
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    if (!current) { showError('Please choose whether you are a buyer or a supplier.'); return; }
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    if (document.getElementById('website').value) { finish('We have your details.'); return; }
+
+    var data = collect();
+
+    if (FORM_ENDPOINT) {
+      go.disabled = true; go.textContent = 'Sending...';
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('bad status');
+        finish('We have your details and will be in touch when your side opens.');
+      }).catch(function () {
+        go.disabled = false; go.textContent = 'Join the early list';
+        showError('Something went wrong and we could not send your details. Please try again, or write to ' + CONTACT + '.');
+      });
+      return;
+    }
+
+    var lines = [];
+    for (var k in data) { if (data.hasOwnProperty(k)) lines.push(k + ': ' + data[k]); }
+    var subject = 'Vula Flow early access: ' + current;
+    window.location.href = 'mailto:' + CONTACT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    finish('Your email app should now open with your details filled in. Press send to finish. If nothing opens, write to ' + CONTACT + '.');
+  });
+})();
+</script>
+</body>
+</html>
