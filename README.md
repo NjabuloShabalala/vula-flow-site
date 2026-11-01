@@ -5,20 +5,27 @@ Plain HTML and CSS. No build step.
 - `index.html` is the gateway that sends visitors to either page
 - `buyers.html` is the corporate buyer page
 - `suppliers.html` is the SME supplier page
+- `signup.html` is the early access sign-up (buyers and suppliers)
+- `privacy.html` is the draft privacy notice
 - `styles.css` holds the shared colours and base styles
 - `favicon.svg` is the browser tab icon
 
-## Put it live on Vercel
+## Editing text
 
-1. Create a new repository on GitHub (for example `vula-flow-site`) and upload these files so that `index.html` sits at the top level of the repository.
-2. Go to vercel.com, choose Add New, then Project, and import that repository.
-3. Leave every setting as it is (no framework, no build command) and press Deploy.
-4. Vercel gives you a live link. To use your own domain, open the project, go to Settings, then Domains.
+Open the file on GitHub, click the pencil icon, change the words and press Commit changes. Vercel redeploys on its own within about a minute.
 
-Check Vercel's current terms before using the free plan for a business. Netlify and Cloudflare Pages host these same files in the same way.
+## Connecting the sign-up form
 
-## Things to fill in before launch
+Until you do this, the form opens a pre-filled email to shabalala@bnzgroup.co.za, so no sign-up is lost.
 
-- The Privacy and Terms links in the footers point to `#`
-- The "Join the supplier list" and "Request a pilot" buttons open an email to shabalala@bnzgroup.co.za until the sign-up page exists
-- Sample data on the pages is invented and labelled as such
+1. Create a free form on a service such as Formspree (formspree.io). It gives you an address that looks like `https://formspree.io/f/abcdwxyz`.
+2. Open `signup.html`, find the line `var FORM_ENDPOINT = "";` near the bottom and paste the address between the quotes.
+3. Commit. Sign-ups now arrive in your email and in the service's dashboard.
+
+## Before you rely on the privacy notice
+
+The highlighted brackets in `privacy.html` need filling in: the legal entity name and address, the information officer, the form service, the email provider, the storage countries and the retention period. Have a South African lawyer review it.
+
+## Putting changes live
+
+Every commit to the repository's main branch redeploys the site on Vercel.
