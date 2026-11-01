@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vula Flow | Open the door between small suppliers and the companies that buy</title>
+<meta name="description" content="Vula Flow checks supplier documents, traces every field to its source and helps corporate buyers shortlist small suppliers they can stand behind.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.wrap{padding:0 clamp(20px,5vw,64px)}
+.inner{max-width:1200px;margin:0 auto}
+.serif{font-family:'Fraunces',Georgia,serif}
+.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.doors{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;margin-top:72px}
+.door{
+  flex:1 1 340px;max-width:520px;min-width:0;
+  display:flex;flex-direction:column;
+  padding:clamp(72px,9vw,120px) clamp(28px,4vw,48px) 44px;
+  border-radius:999px 999px 6px 6px;
+  text-align:center;align-items:center;
+}
+.door h2{margin:20px 0 0;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(30px,3.4vw,40px);line-height:1.12;letter-spacing:-.015em}
+.door p.desc{margin:18px 0 0;font-size:18px;line-height:1.55;max-width:380px}
+.door .go{
+  margin-top:36px;display:inline-flex;align-items:center;gap:10px;
+  min-height:56px;padding:0 28px;border-radius:4px;
+  background:var(--paper);color:var(--ink);font-size:16px;font-weight:600;
+}
+.door-buyer{background:var(--ink);color:var(--paper)}
+.door-buyer .eyebrow{color:#E58A66}
+.door-buyer .desc{color:rgba(247,244,236,.88)}
+.door-supplier{background:var(--terracotta-dark);color:#FFFFFF}
+.door-supplier .eyebrow{color:#FFE3D4}
+.door-supplier .desc{color:#FFFFFF}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:24px 0">
+    <a href="index.html" aria-label="Vula Flow home" style="display:flex;align-items:center;gap:10px">
+      <svg width="26" height="28" viewBox="0 0 26 28" fill="none" stroke="#C2512F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26V13a10 10 0 0 1 20 0v13"/><path d="M13 26V9"/></svg>
+      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:-.01em">Vula Flow</span>
+    </a>
+    <nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:500">
+      <a href="buyers.html">For buyers</a>
+      <a href="suppliers.html">For suppliers</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="wrap" style="padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(72px,9vw,128px)">
+  <div class="inner" style="text-align:center">
+    <p class="eyebrow" style="color:#A8431F">Vula means open</p>
+    <h1 class="serif" style="margin:28px auto 0;max-width:980px;font-weight:500;font-size:clamp(42px,6.6vw,84px);line-height:1.04;letter-spacing:-.025em">Open the door between small suppliers and the <em style="font-style:italic;color:#A8431F">companies that buy.</em></h1>
+    <p style="margin:32px auto 0;max-width:600px;font-size:clamp(18px,2vw,21px);line-height:1.6;color:#3D4F61">Choose your side. Both start from the same idea: documents that are checked, kept current and traceable to their source.</p>
+
+    <div class="doors">
+      <a class="door door-buyer" href="buyers.html">
+        <p class="eyebrow">I'm a buyer</p>
+        <h2>Shortlist suppliers you can stand behind.</h2>
+        <p class="desc">Compare bids side by side, with every field traced to its source and an audit trail behind each decision.</p>
+        <span class="go">For procurement and ESD teams
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+      <a class="door door-supplier" href="suppliers.html">
+        <p class="eyebrow">I'm a supplier</p>
+        <h2>Get seen by the companies that buy.</h2>
+        <p class="desc">Add your papers once. We check them, keep your badges current and show you to buyers looking for suppliers like you.</p>
+        <span class="go">For small businesses
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="inner" style="border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C">
+    <span>© 2026 Vula Flow. Documents and business data are held in South Africa.</span>
+    <span style="display:flex;flex-wrap:wrap;gap:24px">
+      <a href="mailto:shabalala@bnzgroup.co.za">shabalala@bnzgroup.co.za</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

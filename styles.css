@@ -1,0 +1,21 @@
+:root{
+  --accent:#C2512F;
+  --paper:#F7F4EC;
+  --sand:#EBE4D4;
+  --ink:#0F2A43;
+  --terracotta-dark:#A8431F;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;transition:opacity 160ms ease-out,background-color 160ms ease-out}
+a:hover{opacity:.82}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+mark{background:#F4D98C;color:var(--ink);padding:0 2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}a{transition:none}}
