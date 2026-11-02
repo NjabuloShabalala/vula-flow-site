@@ -167,10 +167,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 </footer>
 
 <script>
-// Paste the address your form service gives you between the quotes, for example
-// "https://formspree.io/f/abcdwxyz". While this is empty, the form opens a
-// pre-filled email to the address below instead, so nothing is lost.
-var FORM_ENDPOINT = "";
+// Web3Forms: paste the Access Key from your Web3Forms email between the quotes on the
+// WEB3FORMS_KEY line. While it is empty, the form opens a pre-filled email to the address
+// below instead, so nothing is lost.
+var FORM_ENDPOINT = "https://api.web3forms.com/submit";
+var WEB3FORMS_KEY = "";
 var CONTACT = "shabalala@bnzgroup.co.za";
 
 (function () {
@@ -243,16 +244,28 @@ var CONTACT = "shabalala@bnzgroup.co.za";
     if (document.getElementById('website').value) { finish('We have your details.'); return; }
 
     var data = collect();
+    var isW3F = FORM_ENDPOINT.indexOf('web3forms') > -1;
+    var useService = FORM_ENDPOINT && (!isW3F || WEB3FORMS_KEY);
 
-    if (FORM_ENDPOINT) {
+    if (useService) {
+      var payload = {};
+      for (var k0 in data) { if (data.hasOwnProperty(k0)) payload[k0] = data[k0]; }
+      if (isW3F) {
+        payload.access_key = WEB3FORMS_KEY;
+        payload.subject = 'Vula Flow early access: ' + current;
+        payload.from_name = 'Vula Flow website';
+      }
+      if (data['Work email']) payload.email = data['Work email'];
       go.disabled = true; go.textContent = 'Sending...';
       fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(payload)
       }).then(function (r) {
-        if (!r.ok) throw new Error('bad status');
-        finish('We have your details and will be in touch when your side opens.');
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || j.success === false) throw new Error('bad status');
+          finish('We have your details and will be in touch when your side opens.');
+        });
       }).catch(function () {
         go.disabled = false; go.textContent = 'Join the early list';
         showError('Something went wrong and we could not send your details. Please try again, or write to ' + CONTACT + '.');
