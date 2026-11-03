@@ -1,4 +1,4 @@
-# Vula Flow website
+# VulaFlow website
 
 Plain HTML and CSS. No build step.
 
@@ -14,13 +14,13 @@ Plain HTML and CSS. No build step.
 
 Open the file on GitHub, click the pencil icon, change the words and press Commit changes. Vercel redeploys on its own within about a minute.
 
-## Connecting the sign-up form
+## Connecting the sign-up form (Web3Forms)
 
 Until you do this, the form opens a pre-filled email to shabalala@bnzgroup.co.za, so no sign-up is lost.
 
-1. Create a free form on a service such as Formspree (formspree.io). It gives you an address that looks like `https://formspree.io/f/abcdwxyz`.
-2. Open `signup.html`, find the line `var FORM_ENDPOINT = "";` near the bottom and paste the address between the quotes.
-3. Commit. Sign-ups now arrive in your email and in the service's dashboard.
+1. At web3forms.com, create a form (name it "VulaFlow early access") and copy its Access Key.
+2. Open `signup.html` on GitHub, find the line `var WEB3FORMS_KEY = "";` near the bottom and paste the key between the quotes. The key is meant to be visible in the page, so this is safe.
+3. Commit. Sign-ups now arrive by email through Web3Forms.
 
 ## Before you rely on the privacy notice
 

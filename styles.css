@@ -19,3 +19,32 @@ a:hover{opacity:.82}
 a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 mark{background:#F4D98C;color:var(--ink);padding:0 2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}a{transition:none}}
+
+/* Motion layer. Every effect here is switched off for visitors who ask their device for reduced motion. */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  /* 1. Entrance: the two doors on the home page, and the hero on the buyer and supplier pages */
+  .door{transition:transform 260ms cubic-bezier(.2,.7,.2,1),box-shadow 260ms ease-out;animation:rise 600ms cubic-bezier(.2,.7,.2,1) backwards}
+  .door-supplier{animation-delay:120ms}
+  #top > div{animation:rise 600ms cubic-bezier(.2,.7,.2,1) backwards}
+
+  /* 2. Doors: lift on hover, arrow nudges forward */
+  .door:hover{transform:translateY(-6px);box-shadow:0 18px 36px -18px rgba(15,42,67,.45);opacity:1}
+  .door .go svg{transition:transform 220ms ease-out}
+  .door:hover .go svg{transform:translateX(4px)}
+
+  /* 3. Buttons that lead to sign-up: small lift on hover, press on click */
+  a[href^="signup.html"],.submit{transition:transform 180ms ease-out,box-shadow 180ms ease-out,opacity 160ms ease-out}
+  a[href^="signup.html"]:hover,.submit:hover{transform:translateY(-2px);box-shadow:0 10px 20px -12px rgba(15,42,67,.55)}
+  a[href^="signup.html"]:active,.submit:active{transform:none;box-shadow:none}
+
+  /* 4. Sections fade up once as they scroll into view (motion.js adds the classes) */
+  .js-motion .reveal{opacity:0;transform:translateY(16px);transition:opacity 520ms ease-out,transform 520ms cubic-bezier(.2,.7,.2,1)}
+  .js-motion .reveal.in{opacity:1;transform:none}
+
+  /* 5. Sign-up form: focus ring eases in, steps and the thank-you panel fade up */
+  input,select,textarea{transition:border-color 160ms ease-out,box-shadow 160ms ease-out}
+  input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(194,81,47,.18)}
+  #thanks:not([hidden]),#shared:not([hidden]),#s-buyer:not([hidden]),#s-supplier:not([hidden]){animation:rise 360ms ease-out backwards}
+}
+@media print{.reveal{opacity:1 !important;transform:none !important}}

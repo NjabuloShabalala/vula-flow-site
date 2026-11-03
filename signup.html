@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Join the early list | Vula Flow</title>
-<meta name="description" content="Leave your details to be among the first buyers and suppliers through the door at Vula Flow.">
+<title>Join the early list | VulaFlow</title>
+<meta name="description" content="Leave your details to be among the first buyers and suppliers through the door at VulaFlow.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,14 +50,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 [hidden]{display:none !important}
 </style>
+<script src="motion.js"></script>
 </head>
 <body>
 
 <header class="wrap">
   <div class="inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:24px 0">
-    <a href="index.html" aria-label="Vula Flow home" style="display:flex;align-items:center;gap:10px">
+    <a href="index.html" aria-label="VulaFlow home" style="display:flex;align-items:center;gap:10px">
       <svg width="26" height="28" viewBox="0 0 26 28" fill="none" stroke="#C2512F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26V13a10 10 0 0 1 20 0v13"/><path d="M13 26V9"/></svg>
-      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:-.01em">Vula Flow</span>
+      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:-.01em">VulaFlow</span>
     </a>
     <nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:500">
       <a href="buyers.html">For buyers</a>
@@ -72,7 +73,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     <div style="flex:5 1 340px;min-width:0;max-width:520px">
       <p class="eyebrow">Early access</p>
       <h1 class="serif" style="margin:24px 0 0;font-weight:500;font-size:clamp(40px,5.6vw,68px);line-height:1.05;letter-spacing:-.02em">Be among the first through the <em style="font-style:italic;color:#A8431F">door.</em></h1>
-      <p style="margin:28px 0 0;font-size:19px;line-height:1.6;color:#3D4F61">Vula Flow is opening to its first buyers and suppliers. Leave your details and we will contact you when your side opens.</p>
+      <p style="margin:28px 0 0;font-size:19px;line-height:1.6;color:#3D4F61">VulaFlow is opening to its first buyers and suppliers. Leave your details and we will contact you when your side opens.</p>
       <p style="margin:28px 0 0;display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.55;color:#3D4F61">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:#A8431F"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
         <span>We ask for contact details only. No ID numbers, bank details or company documents.</span>
@@ -133,7 +134,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
             <!-- shared -->
             <div id="shared" class="stack" hidden>
               <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
-              <label class="consent"><input type="checkbox" id="consent" name="consent" required><span>I agree that Vula Flow may use these details to contact me about early access. I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a>, and I know I can withdraw my consent at any time.</span></label>
+              <label class="consent"><input type="checkbox" id="consent" name="consent" required><span>I agree that VulaFlow may use these details to contact me about early access. I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a>, and I know I can withdraw my consent at any time.</span></label>
               <p class="err" id="err" role="alert" hidden></p>
               <button type="submit" class="submit" id="go">Join the early list</button>
             </div>
@@ -158,7 +159,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 <footer class="wrap">
   <div class="inner" style="border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C">
-    <span>© 2026 Vula Flow</span>
+    <span>© 2026 VulaFlow</span>
     <span style="display:flex;flex-wrap:wrap;gap:24px">
       <a href="mailto:shabalala@bnzgroup.co.za">shabalala@bnzgroup.co.za</a>
       <a href="privacy.html">Privacy</a>
@@ -252,8 +253,8 @@ var CONTACT = "shabalala@bnzgroup.co.za";
       for (var k0 in data) { if (data.hasOwnProperty(k0)) payload[k0] = data[k0]; }
       if (isW3F) {
         payload.access_key = WEB3FORMS_KEY;
-        payload.subject = 'Vula Flow early access: ' + current;
-        payload.from_name = 'Vula Flow website';
+        payload.subject = 'VulaFlow early access: ' + current;
+        payload.from_name = 'VulaFlow website';
       }
       if (data['Work email']) payload.email = data['Work email'];
       go.disabled = true; go.textContent = 'Sending...';
@@ -275,7 +276,7 @@ var CONTACT = "shabalala@bnzgroup.co.za";
 
     var lines = [];
     for (var k in data) { if (data.hasOwnProperty(k)) lines.push(k + ': ' + data[k]); }
-    var subject = 'Vula Flow early access: ' + current;
+    var subject = 'VulaFlow early access: ' + current;
     window.location.href = 'mailto:' + CONTACT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
     finish('Your email app should now open with your details filled in. Press send to finish. If nothing opens, write to ' + CONTACT + '.');
   });
