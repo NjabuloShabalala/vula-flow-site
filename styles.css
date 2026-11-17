@@ -47,4 +47,39 @@ mark{background:#F4D98C;color:var(--ink);padding:0 2px}
   input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(194,81,47,.18)}
   #thanks:not([hidden]),#shared:not([hidden]),#s-buyer:not([hidden]),#s-supplier:not([hidden]){animation:rise 360ms ease-out backwards}
 }
+
+/* Spatial navigation. The door you pick on the home page grows into that page, and Back shrinks it
+   to where it came from. Browsers without cross-page view transitions simply change page as before.
+   Only the shapes' size, position and opacity move, and it is all off for reduced motion. */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .door-buyer,.vt-buyer{view-transition-name:door-buyer}
+  .door-supplier,.vt-supplier{view-transition-name:door-supplier}
+
+  ::view-transition-group(root){animation-duration:260ms}
+  ::view-transition-old(root){animation:220ms ease-out both vt-out}
+  ::view-transition-new(root){animation:300ms ease-out both vt-in}
+
+  ::view-transition-group(door-buyer),::view-transition-group(door-supplier){
+    animation-duration:400ms;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+  ::view-transition-image-pair(door-buyer),::view-transition-image-pair(door-supplier){
+    overflow:hidden;border-radius:0;animation:vt-round-off 400ms cubic-bezier(.2,.7,.2,1) both}
+  ::view-transition-old(door-buyer),::view-transition-new(door-buyer),
+  ::view-transition-old(door-supplier),::view-transition-new(door-supplier){height:100%;width:100%;object-fit:cover}
+
+  /* Back is a little quicker, and the page shrinks back into the door */
+  html[data-vt-dir="back"]::view-transition-group(door-buyer),
+  html[data-vt-dir="back"]::view-transition-group(door-supplier){animation-duration:280ms}
+  html[data-vt-dir="back"]::view-transition-image-pair(door-buyer),
+  html[data-vt-dir="back"]::view-transition-image-pair(door-supplier){animation:vt-round-on 280ms cubic-bezier(.2,.7,.2,1) both}
+  html[data-vt-dir="back"]::view-transition-old(root){animation-duration:160ms}
+  html[data-vt-dir="back"]::view-transition-new(root){animation-duration:220ms}
+
+  /* The door arriving by transition must not also play its own entrance */
+  html[data-vt] .door{animation:none}
+}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0}}
+@keyframes vt-round-off{from{border-radius:999px 999px 6px 6px}to{border-radius:0}}
+@keyframes vt-round-on{from{border-radius:0}to{border-radius:999px 999px 6px 6px}}
 @media print{.reveal{opacity:1 !important;transform:none !important}}
