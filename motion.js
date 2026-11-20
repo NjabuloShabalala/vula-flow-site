@@ -33,3 +33,16 @@
     });
   });
 })();
+
+// Arrival after the home-page door animation. The home page leaves a short-lived note in
+// sessionStorage; this page then starts as the same warm light and clears it. If the note is
+// old (someone came back to this tab much later) it is ignored. Nothing runs for reduced motion.
+(function () {
+  if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var t = 0;
+  try { t = +sessionStorage.getItem('vf-door') || 0; sessionStorage.removeItem('vf-door'); } catch (e) {}
+  if (!t || Date.now() - t > 8000) return;
+  var el = document.documentElement;
+  el.classList.add('door-arrive');
+  setTimeout(function () { el.classList.remove('door-arrive'); }, 1200);   // safety: never leave it on
+})();

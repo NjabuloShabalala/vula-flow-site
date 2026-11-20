@@ -1,0 +1,230 @@
+/* ===== VulaFlow landing: scroll story =====
+   Three parts: a falling wordmark, the opening line, and the two doors.
+   Without JavaScript, or when the visitor asks for reduced motion, the parts simply stack
+   as normal sections and nothing moves. The story layout only applies under .js-story. */
+
+.wrap{padding:0 clamp(20px,5vw,64px)}
+.inner{max-width:1200px;margin:0 auto}
+.eyebrow{margin:0;font-size:15px;font-weight:600;letter-spacing:0;text-transform:none}
+.hero .eyebrow{color:var(--terracotta-dark)}
+
+/* Header stays on screen so people can always jump to a page */
+.site-head{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(247,244,236,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.site-head .inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:18px 0}
+.site-head nav{display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:500}
+
+/* ---- Part 1: wordmark ---- */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:96px clamp(16px,4vw,48px) 72px}
+.wordmark{
+  margin:20px 0 0;font-family:var(--font-display);font-weight:400;
+  font-size:min(17vw,30svh);line-height:1;letter-spacing:0;white-space:nowrap;color:var(--ink)
+}
+.wordmark .fl{color:var(--terracotta-dark)}
+.lt{display:inline-block;will-change:transform,opacity}
+.lg{display:inline-block}
+
+/* ---- Part 2: opening line ---- */
+.mid{padding:96px clamp(20px,5vw,64px);text-align:center;background:var(--ink);color:var(--paper)}
+.mid h1{margin:24px auto 0;max-width:980px;font-family:var(--font-display);font-weight:400;font-size:clamp(2.5rem,1rem + 5vw,5rem);line-height:1.06;letter-spacing:-.01em}
+.mid h1 em{font-style:normal;color:var(--accent-light)}
+.mid p.sub{margin:28px auto 0;max-width:600px;font-size:clamp(18px,2vw,21px);line-height:1.6;color:var(--on-ink)}
+
+/* The three documents: only used in the story */
+.docs{display:none}
+.scroll-cue{display:none}
+
+/* ---- Part 3: doors ---- */
+.doors-sec{position:relative;padding:48px clamp(20px,5vw,64px) 112px;overflow:clip}
+.panel{
+  position:relative;max-width:1200px;margin:0 auto;
+  background:var(--sand);border-radius:12px;
+  padding:clamp(24px,4.5vw,56px);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:32px
+}
+.vdoor{
+  position:relative;flex:1 1 340px;max-width:520px;min-width:0;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:clamp(72px,9vw,112px) clamp(28px,4vw,48px) 44px;
+  border-radius:999px 999px 6px 6px;
+}
+.vdoor-buyer{background:var(--ink);color:var(--paper)}
+.vdoor-supplier{background:var(--terracotta-dark);color:#FFFFFF}
+.vdoor .eyebrow{margin:0}
+.vdoor-buyer .eyebrow{color:var(--accent-light)}
+.vdoor-supplier .eyebrow{color:#fff}
+.vdoor h2{margin:20px 0 0;font-family:var(--font-display);font-weight:400;font-size:clamp(1.75rem,1.2rem + 1.6vw,2.375rem);line-height:1.12;letter-spacing:0}
+/* The heading link covers the whole door, so the door opens its page, and the button sits above it */
+.vdoor h2 a::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:1}
+.vdoor h2 a:focus-visible{outline:none}
+.vdoor h2 a:focus-visible::after{outline:3px solid var(--paper);outline-offset:-10px}
+.vdoor p.desc{margin:18px 0 0;font-size:18px;line-height:1.55;max-width:380px}
+.vdoor-buyer .desc{color:var(--on-ink)}
+.vdoor-supplier .desc{color:#fff}
+/* Each door's children take their opacity from --c, which landing.js sets on .vdoor */
+.vdoor > *{opacity:var(--c,1)}
+
+/* Aligned door rows: eyebrow, heading, description and button share rows across both doors.
+   760px matches `narrow = vw < 760` in landing.js. */
+@media (min-width:760px){
+  .panel{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,520px));
+    grid-template-rows:repeat(4,auto);
+    column-gap:32px;row-gap:0;justify-content:center
+  }
+  .vdoor{
+    display:grid;grid-row:span 4;grid-template-rows:subgrid;
+    justify-items:center;align-content:start;max-width:none
+  }
+  .vdoor .ihb{align-self:start}
+}
+@media (max-width:759.98px){
+  .panel{display:flex;flex-direction:column;align-items:center}
+  .vdoor{flex:none;width:100%}
+}
+
+/* Text wrapping */
+h1,h2{text-wrap:balance}
+.mid p.sub,.vdoor p.desc{text-wrap:pretty;hyphens:auto;hyphenate-limit-chars:7 3 3}
+
+/* The one reply line */
+.reply-note{margin:24px auto 0;text-align:center;font-size:14px;line-height:1.4;color:#4A5B6C}
+
+/* ---- Interactive hover button (plain CSS version of the shadcn component) ---- */
+.ihb{
+  position:relative;z-index:2;display:inline-block;overflow:hidden;cursor:pointer;
+  margin-top:32px;min-width:240px;padding:16px 28px;border-radius:999px;
+  border:1px solid var(--paper);background:var(--paper);color:var(--ink);
+  font-weight:600;font-size:16px;line-height:1.3;text-align:center;
+}
+.ihb .t{display:inline-block;transform:translateX(4px);transition:transform .3s,opacity .3s}
+.ihb .h{
+  position:absolute;top:0;left:0;z-index:10;width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  color:var(--paper);opacity:0;transform:translateX(48px);transition:transform .3s,opacity .3s
+}
+.ihb .dot{
+  position:absolute;left:8%;top:40%;width:8px;height:8px;border-radius:8px;
+  transform:scale(1);transition:all .3s
+}
+.vdoor-buyer .ihb .dot{background:var(--accent)}
+.vdoor-supplier .ihb .dot{background:var(--ink)}
+.ihb:hover .t,.ihb:focus-visible .t{transform:translateX(48px);opacity:0}
+.ihb:hover .h,.ihb:focus-visible .h{transform:translateX(-4px);opacity:1}
+.ihb:hover .dot,.ihb:focus-visible .dot{left:0;top:0;width:100%;height:100%;transform:scale(1.8)}
+.ihb:hover{opacity:1}
+.ihb:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
+.ihb:focus-visible{box-shadow:0 0 0 6px var(--ink)}
+.vdoor-supplier .ihb:focus-visible{box-shadow:0 0 0 6px var(--terracotta-dark)}
+@media (prefers-reduced-motion:reduce){
+  .ihb .t,.ihb .h,.ihb .dot{transition:none}
+}
+
+.site-foot{border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C}
+.site-foot span.links{display:flex;flex-wrap:wrap;gap:24px}
+
+/* ============ Story mode (JavaScript on, motion allowed) ============ */
+.js-story .story{height:198svh;position:relative}
+.js-story .stage{position:sticky;top:0;height:100svh;overflow:hidden;z-index:1}
+.js-story .hero{position:absolute;inset:0;z-index:1;min-height:0}
+.js-story .sheet{
+  position:absolute;inset:0;z-index:3;background:var(--ink);color:var(--paper);
+  border-radius:12px 12px 0 0;box-shadow:0 -12px 40px rgba(15,42,67,.18);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform:translateY(100%);will-change:transform;padding-top:72px
+}
+.js-story .mid{padding-top:0;padding-bottom:0;background:transparent}
+
+/* Letters pop in with an elastic scale. One spring curve covers the whole move, so there are no
+   stops or speed jumps. Browsers that cannot read linear() use a simple overshoot instead. */
+:root{--spring:cubic-bezier(.34,1.56,.64,1)}
+@supports (animation-timing-function:linear(0,1)){
+  :root{--spring:linear(0, 0.0496, 0.1752, 0.3441, 0.5285, 0.7069, 0.864, 0.9909, 1.0839, 1.1435, 1.1733, 1.1786, 1.1656, 1.1406, 1.1092, 1.0761, 1.0449, 1.018, 0.9968, 0.9817, 0.9724, 0.9683, 0.9683, 0.9713, 0.9762, 0.982, 0.9879, 0.9933, 0.9979, 1.0014, 1.0038, 1.0052, 1.0057, 1.0056, 1.0049, 1.004, 1)}
+}
+.js-story .lg{
+  transform-origin:50% 100%;
+  animation:vf-pop 1.25s var(--spring) both,vf-fade .25s ease-out both;
+}
+@keyframes vf-pop{
+  from{transform:translateY(.5em) scale(.15)}
+  to{transform:translateY(0) scale(1)}
+}
+@keyframes vf-fade{from{opacity:0}to{opacity:1}}
+
+/* Documents */
+.js-story .docs{display:block;position:absolute;inset:0;z-index:2;pointer-events:none}
+.doc{
+  --dw:clamp(104px,24vmin,230px);
+  position:absolute;left:calc(50% + var(--ox));top:52%;
+  width:var(--dw);height:calc(var(--dw)*1.32);
+  margin:calc(var(--dw)*-.66) 0 0 calc(var(--dw)/-2);
+  border-radius:8px;opacity:0;will-change:transform,opacity;
+  box-shadow:0 14px 34px rgba(15,42,67,.18);
+}
+.doc .bar{position:absolute;left:14%;top:9%;width:38%;height:4.4%;border-radius:3px;background:currentColor;opacity:.45}
+.doc .ln{position:absolute;left:14%;height:1.8%;border-radius:2px;background:currentColor;opacity:.25}
+.doc .ln:nth-of-type(2){top:24%;width:72%}
+.doc .ln:nth-of-type(3){top:32%;width:62%}
+.doc .ln:nth-of-type(4){top:40%;width:70%}
+.doc .ln:nth-of-type(5){top:48%;width:48%}
+.doc-1{--ox:calc(var(--dw)*-1.15);background:var(--ink);color:var(--paper)}
+.doc-2{--ox:0px;background:var(--terracotta-dark);color:#FFFFFF}
+.doc-3{--ox:calc(var(--dw)*1.15);background:var(--sand);color:var(--ink);border:1px solid rgba(15,42,67,.14)}
+
+/* Scroll cue */
+.js-story .scroll-cue{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  position:absolute;left:50%;bottom:22px;z-index:5;transform:translateX(-50%);
+  font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink);
+  opacity:0;animation:vf-cue-in .6s 2.1s forwards;pointer-events:none
+}
+.scroll-cue i{position:relative;display:block;width:1px;height:44px;background:rgba(15,42,67,.25);overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--accent);animation:vf-cue 1.8s ease-in-out infinite}
+@keyframes vf-cue{0%{top:-40%}100%{top:100%}}
+@keyframes vf-cue-in{to{opacity:var(--cue,1)}}
+.js-story.cue-set .scroll-cue{animation:none;opacity:var(--cue,0)}
+
+@media print{
+  .js-story .story{height:auto}
+  .js-story .stage{position:static;height:auto;overflow:visible}
+  .js-story .hero,.js-story .sheet{position:static;transform:none !important}
+  .js-story .docs,.scroll-cue{display:none !important}
+  .lt,.vdoor,.vdoor > *,.panel{transform:none !important;opacity:1 !important}
+}
+
+
+/* Dark top bar while it sits over the navy section; the cue turns light too */
+.site-head{transition:background-color .25s,color .25s}
+.site-head.head-dark{background:rgba(15,42,67,.92);color:var(--paper)}
+.site-head.head-dark a,.site-head.head-dark span{color:var(--paper)}
+.scroll-cue.on-dark{color:var(--paper)}
+.scroll-cue.on-dark i{background:rgba(247,244,236,.3)}
+@media (prefers-reduced-motion:reduce){.site-head{transition:none}}
+
+/* ---- Door opening scene (plays when a door is clicked; script adds these elements) ---- */
+.dr-scrim{position:fixed;inset:0;z-index:1000;background:var(--paper);opacity:0;pointer-events:none}
+.dr{position:fixed;z-index:1001;margin:0;pointer-events:none;perspective:1300px;will-change:transform}
+.dr-light{
+  position:absolute;inset:0;border-radius:999px 999px 6px 6px;
+  background:radial-gradient(ellipse at 50% 60%,#FFF8E6 0%,var(--glow) 55%,#F8E4BF 100%);
+  box-shadow:0 0 90px 10px rgba(255,236,190,.85)
+}
+.dr-leaf{position:absolute;inset:0;margin:0;max-width:none;flex:none;transform-origin:0 50%;backface-visibility:hidden;will-change:transform;box-shadow:0 20px 50px rgba(15,42,67,.25)}
+.dr-veil{position:fixed;inset:0;z-index:1002;background:var(--glow);opacity:0;pointer-events:none}
+html.door-opening .vdoor.is-chosen{visibility:hidden}
+
+/* Optical centring for the door buttons */
+@supports (text-box:trim-both cap alphabetic){
+  .ihb{padding-block:21px}
+  .ihb .t,
+  .ihb .h > span:first-child{text-box:trim-both cap alphabetic}
+}
+
+/* Footer links: visible underline that clears descenders */
+.site-foot a{
+  text-decoration:underline;
+  text-decoration-thickness:from-font;
+  text-underline-offset:.2em;
+  text-decoration-skip-ink:auto
+}
+.site-foot a:hover{opacity:1;text-decoration-thickness:2px}
