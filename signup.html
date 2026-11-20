@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,12 +23,12 @@
 <meta name="twitter:image" content="https://vulaflowsa.co.za/og-image.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="polish.css">
 <style>
 .wrap{padding:0 clamp(20px,5vw,64px)}
 .inner{max-width:1200px;margin:0 auto}
 .serif{font-family:var(--font-display)}
-.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A8431F}
-.card{background:#FFFFFF;border:1px solid rgba(15,42,67,.18);border-radius:6px;padding:clamp(24px,4vw,40px)}
+.card{padding:0}
 fieldset{border:0;margin:0;padding:0;min-width:0}
 legend{padding:0;font-size:15px;font-weight:600;margin-bottom:12px}
 .choices{display:flex;flex-wrap:wrap;gap:14px}
@@ -36,13 +36,13 @@ legend{padding:0;font-size:15px;font-weight:600;margin-bottom:12px}
 .choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
 .choice-body{display:flex;flex-direction:column;gap:4px;min-height:84px;justify-content:center;padding:16px 20px;border:1.5px solid rgba(15,42,67,.5);border-radius:4px;background:#FFFFFF;transition:background-color 160ms ease-out,color 160ms ease-out}
 .choice-body strong{font-size:18px;font-weight:700}
-.choice-body span{font-size:14px;color:#4A5B6C}
+.choice-body span{font-size:14px;color:#3D4F61}
 .choice input:checked + .choice-body{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .choice input:checked + .choice-body span{color:rgba(247,244,236,.85)}
 .choice input:focus-visible + .choice-body{outline:2px solid var(--ink);outline-offset:3px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field label,.field .lbl{font-size:15px;font-weight:600}
-.field .hint{font-size:13px;color:#4A5B6C;margin:0}
+.field .hint{font-size:13px;color:#3D4F61;margin:0}
 input[type=text],input[type=email],input[type=tel],select,textarea{
   font:inherit;font-size:16px;min-height:52px;padding:12px 14px;width:100%;
   border:1px solid rgba(15,42,67,.5);border-radius:4px;background:#FFFFFF;color:var(--ink)}
@@ -71,7 +71,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   <div class="inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:24px 0">
     <a href="index.html" aria-label="VulaFlow home" style="display:flex;align-items:center;gap:10px">
       <svg width="26" height="28" viewBox="0 0 26 28" fill="none" stroke="#C2512F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26V13a10 10 0 0 1 20 0v13"/><path d="M13 26V9"/></svg>
-      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:-.01em">VulaFlow</span>
+      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:0">VulaFlow</span>
     </a>
     <nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:500">
       <a href="buyers.html">For buyers</a>
@@ -84,12 +84,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   <div class="inner" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:48px 80px">
 
     <div style="flex:5 1 340px;min-width:0;max-width:520px">
-      <p class="eyebrow">Early access</p>
-      <h1 class="serif" style="margin:24px 0 0;font-weight:500;font-size:clamp(40px,5.6vw,68px);line-height:1.05;letter-spacing:-.02em">Be among the first through the <em style="font-style:normal;color:#A8431F">door.</em></h1>
-      <p style="margin:28px 0 0;font-size:19px;line-height:1.6;color:#3D4F61">VulaFlow is opening to its first buyers and suppliers. Leave your details and we will contact you when your side opens.</p>
+      <h1 class="serif" style="margin:0;font-weight:500;font-size:clamp(40px,5.6vw,68px);line-height:1.05;letter-spacing:-0.01em">Be among the first through the door</h1>
+      <p style="margin:28px 0 0;font-size:19px;line-height:1.6;color:#3D4F61">Leave your details and we will contact you when your side opens.</p>
       <p style="margin:28px 0 0;display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.55;color:#3D4F61">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:#A8431F"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-        <span>We ask for contact details only. No ID numbers, bank details or company documents.</span>
+        <span>We ask for contact details only. No <span class="ac">ID</span> numbers, bank details or company documents.</span>
       </p>
     </div>
 
@@ -106,7 +105,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
               </div>
             </fieldset>
 
-            <p id="pick" style="margin:0;font-size:15px;color:#4A5B6C">Choose one to continue.</p>
+            <p id="pick" style="margin:0;font-size:15px;color:#3D4F61">Choose one to continue.</p>
 
             <!-- BUYER -->
             <fieldset id="s-buyer" hidden disabled>
@@ -149,7 +148,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
               <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
               <label class="consent"><input type="checkbox" id="consent" name="consent" required><span>I agree that VulaFlow may use these details to contact me about early access. I have read the <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a>, and I know I can withdraw my consent at any time.</span></label>
               <p class="err" id="err" role="alert" hidden></p>
-              <button type="submit" class="submit" id="go">Join the early list</button>
+              <button type="submit" class="submit" id="go"><span class="t" id="go-label">Join the early list</span></button>
             </div>
           </div>
         </form>
@@ -160,9 +159,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <div style="width:52px;height:52px;border-radius:999px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
           </div>
-          <h2 class="serif" style="margin:24px 0 0;font-weight:500;font-size:clamp(30px,4vw,40px);line-height:1.1;letter-spacing:-.015em">Thank you.</h2>
+          <h2 class="serif" style="margin:24px 0 0;font-weight:500;font-size:clamp(30px,4vw,40px);line-height:1.1;letter-spacing:0">Thank you</h2>
           <p id="thanks-text" style="margin:16px 0 0;font-size:18px;line-height:1.6;color:#3D4F61">We have your details and will be in touch when your side opens.</p>
-          <a href="index.html" style="margin-top:28px;display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:1px solid var(--ink);border-radius:4px;font-size:16px;font-weight:600">Back to the home page</a>
+          <a href="index.html" style="margin-top:28px;display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:1px solid var(--ink);border-radius:4px;font-size:16px;font-weight:600"><span class="t">Back to the home page</span></a>
         </div>
 
       </div>
@@ -171,11 +170,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 </main>
 
 <footer class="wrap">
-  <div class="inner" style="border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C">
+  <div class="inner" style="border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#3D4F61">
     <span>© 2026 VulaFlow</span>
     <span style="display:flex;flex-wrap:wrap;gap:24px">
       <a href="mailto:hello@vulaflowsa.co.za">hello@vulaflowsa.co.za</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
     </span>
   </div>
 </footer>
@@ -196,6 +195,7 @@ var CONTACT = "hello@vulaflowsa.co.za";
   var pick = document.getElementById('pick');
   var err = document.getElementById('err');
   var go = document.getElementById('go');
+  var goLabel = document.getElementById('go-label');
   var thanks = document.getElementById('thanks');
   var thanksText = document.getElementById('thanks-text');
   var current = '';
@@ -270,7 +270,7 @@ var CONTACT = "hello@vulaflowsa.co.za";
         payload.from_name = 'VulaFlow website';
       }
       if (data['Work email']) payload.email = data['Work email'];
-      go.disabled = true; go.textContent = 'Sending...';
+      go.disabled = true; goLabel.textContent = 'Sending…';
       fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
@@ -281,7 +281,7 @@ var CONTACT = "hello@vulaflowsa.co.za";
           finish('We have your details and will be in touch when your side opens.');
         });
       }).catch(function () {
-        go.disabled = false; go.textContent = 'Join the early list';
+        go.disabled = false; goLabel.textContent = 'Join the early list';
         showError('Something went wrong and we could not send your details. Please try again, or write to ' + CONTACT + '.');
       });
       return;

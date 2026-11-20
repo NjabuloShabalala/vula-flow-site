@@ -1,0 +1,28 @@
+/* polish.css: load AFTER styles.css */
+
+/* Headings: balanced wrapping, no hyphenation. Body copy: hyphenate narrow columns, avoid orphans. */
+h1,h2,h3{text-wrap:balance;hyphens:manual}
+p,li{text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+
+/* Sup/sub never inflate line height */
+sup,sub{font-size:.75em;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.4em}
+sub{bottom:-.2em}
+
+/* Underlines clear descenders */
+.doc a,.consent a,.lnk{text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-skip-ink:auto}
+
+/* Acronyms in body copy sit at x-height */
+.ac{font-variant-caps:all-small-caps;letter-spacing:.03em}
+
+/* Optical centring for button and badge labels */
+.t{display:block}
+@supports (text-box:trim-both cap alphabetic){.t{text-box:trim-both cap alphabetic}}
+
+/* Middle-preserving filename truncation: ellipsis on the name, extension always visible */
+.fn{display:flex;min-width:0}
+.fn-a{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fn-b{flex:none}
+
+/* Card titles: cap at 3 lines so grid rows stay aligned */
+.ct{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}

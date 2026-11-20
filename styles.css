@@ -13,7 +13,7 @@
   --font-body:'ITC Avant Garde Gothic','Avant Garde','Jost',system-ui,sans-serif;
 }
 /* Caprasimo has one weight, so stop the browser faking a bold. Remove this rule once Cooper BT files are added. */
-[style*="var(--font-display)"],.serif,.doc h2,.door h2{font-weight:400 !important;font-synthesis:none}
+[style*="var(--font-display)"],.serif,.doc h2,.door h2,.wordmark,.vdoor h2,.mid h1{font-weight:400 !important;font-synthesis:none}
 /* LICENSED FONTS: uncomment and match the file names to what you upload.
 @font-face{font-family:'ITC Avant Garde Gothic';src:url(fonts/AvantGarde-Book.woff2) format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'ITC Avant Garde Gothic';src:url(fonts/AvantGarde-Medium.woff2) format('woff2');font-weight:500;font-display:swap}
@@ -27,6 +27,9 @@
   --sand:#EBE4D4;
   --ink:#0F2A43;
   --terracotta-dark:#A8431F;
+  --accent-light:#E58A66;
+  --on-ink:rgba(247,244,236,.88);
+  --glow:#FFF3DA;
 }
 html{scroll-behavior:smooth}
 *{box-sizing:border-box}
@@ -106,3 +109,18 @@ mark{background:#F4D98C;color:var(--ink);padding:0 2px}
 @keyframes vt-round-off{from{border-radius:999px 999px 6px 6px}to{border-radius:0}}
 @keyframes vt-round-on{from{border-radius:0}to{border-radius:999px 999px 6px 6px}}
 @media print{.reveal{opacity:1 !important;transform:none !important}}
+
+/* Arrival after a door opens: the page starts as the same warm light and clears away.
+   The class is added by motion.js only when motion is allowed. */
+@media (prefers-reduced-motion:no-preference){
+  html.door-arrive::before{
+    content:"";position:fixed;inset:0;z-index:9999;background:var(--glow);pointer-events:none;
+    animation:vf-arrive .75s cubic-bezier(.3,.6,.2,1) .05s both
+  }
+  @keyframes vf-arrive{from{opacity:1}to{opacity:0}}
+}
+
+/* Superscript and subscript must not inflate the line height */
+sup,sub{line-height:0;font-size:.75em;vertical-align:baseline;position:relative}
+sup{top:-.45em}
+sub{top:.2em}

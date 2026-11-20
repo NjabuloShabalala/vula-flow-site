@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VulaFlow | Verified small suppliers for corporate buyers</title>
 <meta name="description" content="VulaFlow checks supplier documents, traces every field to its source and helps corporate buyers shortlist small suppliers they can stand behind.">
+<meta name="robots" content="noindex">
 <link rel="canonical" href="https://vulaflowsa.co.za/">
 <meta name="theme-color" content="#F7F4EC">
 <meta property="og:type" content="website">
@@ -28,44 +29,18 @@
 </script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
-<style>
-.wrap{padding:0 clamp(20px,5vw,64px)}
-.inner{max-width:1200px;margin:0 auto}
-.serif{font-family:var(--font-display)}
-.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.doors{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;margin-top:72px}
-.door{
-  flex:1 1 340px;max-width:520px;min-width:0;
-  display:flex;flex-direction:column;
-  padding:clamp(72px,9vw,120px) clamp(28px,4vw,48px) 44px;
-  border-radius:999px 999px 6px 6px;
-  text-align:center;align-items:center;
-}
-.door h2{margin:20px 0 0;font-family:var(--font-display);font-weight:500;font-size:clamp(30px,3.4vw,40px);line-height:1.12;letter-spacing:-.015em}
-.door p.desc{margin:18px 0 0;font-size:18px;line-height:1.55;max-width:380px}
-.door .go{
-  margin-top:36px;display:inline-flex;align-items:center;gap:10px;
-  min-height:56px;padding:0 28px;border-radius:4px;
-  background:var(--paper);color:var(--ink);font-size:16px;font-weight:600;
-}
-.door-buyer{background:var(--ink);color:var(--paper)}
-.door-buyer .eyebrow{color:#E58A66}
-.door-buyer .desc{color:rgba(247,244,236,.88)}
-.door-supplier{background:var(--terracotta-dark);color:#FFFFFF}
-.door-supplier .eyebrow{color:#FFE3D4}
-.door-supplier .desc{color:#FFFFFF}
-</style>
+<link rel="stylesheet" href="landing.css">
 <script src="motion.js"></script>
 </head>
 <body>
 
-<header class="wrap">
-  <div class="inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:24px 0">
+<header class="site-head wrap">
+  <div class="inner">
     <a href="index.html" aria-label="VulaFlow home" style="display:flex;align-items:center;gap:10px">
       <svg width="26" height="28" viewBox="0 0 26 28" fill="none" stroke="#C2512F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26V13a10 10 0 0 1 20 0v13"/><path d="M13 26V9"/></svg>
-      <span class="serif" style="font-size:24px;font-weight:600;letter-spacing:-.01em">VulaFlow</span>
+      <span class="serif" style="font-size:24px">VulaFlow</span>
     </a>
-    <nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:500">
+    <nav aria-label="Main">
       <a href="buyers.html">For buyers</a>
       <a href="suppliers.html">For suppliers</a>
     </nav>
@@ -73,44 +48,65 @@
 </header>
 
 <main>
-<section class="wrap" style="padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(72px,9vw,128px)">
-  <div class="inner" style="text-align:center">
-    <p class="eyebrow" style="color:#A8431F">Vula means open</p>
-    <h1 class="serif" style="margin:28px auto 0;max-width:980px;font-weight:500;font-size:clamp(42px,6.6vw,84px);line-height:1.04;letter-spacing:-.025em">Open the door between small suppliers and the <em style="font-style:normal;color:#A8431F">companies that buy.</em></h1>
-    <p style="margin:32px auto 0;max-width:600px;font-size:clamp(18px,2vw,21px);line-height:1.6;color:#3D4F61">Choose your side. Both sides work from documents that are checked, kept current and traceable to their source.</p>
+  <div class="story" id="story">
+    <div class="stage" id="stage">
 
-    <div class="doors">
-      <a class="door door-buyer" href="buyers.html">
-        <p class="eyebrow">I'm a buyer</p>
-        <h2>Shortlist suppliers you can stand behind.</h2>
-        <p class="desc">Compare bids side by side, with every field traced to its source and an audit trail behind each decision.</p>
-        <span class="go">For procurement and ESD teams
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
-      <a class="door door-supplier" href="suppliers.html">
-        <p class="eyebrow">I'm a supplier</p>
-        <h2>Get seen by the companies that buy.</h2>
-        <p class="desc">Add your papers once. We check them, keep your badges current and show you to buyers looking for suppliers like you.</p>
-        <span class="go">For small businesses
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
+      <!-- Part 1: the wordmark. It is decoration; the page's heading is in part 2. -->
+      <section class="hero" id="hero" aria-label="VulaFlow">
+        <p class="eyebrow">Vula means open</p>
+        <div class="wordmark" id="wordmark" role="img" aria-label="VulaFlow">Vula<span class="fl">Flow</span></div>
+      </section>
+
+      <!-- The three documents the wordmark breaks into -->
+      <div class="docs" id="docs" aria-hidden="true">
+        <div class="doc doc-1"><i class="bar"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i></div>
+        <div class="doc doc-2"><i class="bar"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i></div>
+        <div class="doc doc-3"><i class="bar"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i><i class="ln"></i></div>
+      </div>
+
+      <!-- Part 2: the opening line, which covers the documents as it slides up -->
+      <div class="sheet" id="sheet">
+        <section class="mid">
+          <h1>Open the door between small suppliers and the <em>companies that buy</em></h1>
+          <p class="sub">Both sides work from documents that are checked, current and traceable to their source.</p>
+        </section>
+      </div>
+
+      <div class="scroll-cue" id="cue" aria-hidden="true"><span>Scroll</span><i></i></div>
     </div>
   </div>
-</section>
+
+  <!-- Part 3: the two doors -->
+  <section class="doors-sec doors" id="doors-sec" aria-label="Choose your side">
+    <div class="panel" id="panel">
+      <!-- Both doors lead to the sign-up for now. When the platform is linked, point each heading link and button at its own side. -->
+      <div class="vdoor vdoor-buyer">
+        <p class="eyebrow">I’m a buyer</p>
+        <h2><a href="signup.html?type=buyer">Shortlist suppliers you can stand behind</a></h2>
+        <p class="desc">Compare bids side by side, with every field traced to its source and an audit trail behind each decision.</p>
+        <a class="ihb" href="signup.html?type=buyer"><span class="t">Request a pilot</span><span class="h" aria-hidden="true"><span>Request a pilot</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="dot"></span></a>
+      </div>
+      <div class="vdoor vdoor-supplier">
+        <p class="eyebrow">I’m a supplier</p>
+        <h2><a href="signup.html?type=supplier">Get seen by the companies that buy</a></h2>
+        <p class="desc">Add your papers once. We check them, keep your badges current and show you to buyers looking for suppliers like you.</p>
+        <a class="ihb" href="signup.html?type=supplier"><span class="t">Join the supplier list</span><span class="h" aria-hidden="true"><span>Join the supplier list</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="dot"></span></a>
+      </div>
+    </div>
+    <p class="reply-note">We reply within one business day.</p>
+  </section>
 </main>
 
 <footer class="wrap">
-  <div class="inner" style="border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C">
+  <div class="inner site-foot">
     <span>© 2026 VulaFlow. Supplier documents and business data will be held in South Africa.</span>
-    <span style="display:flex;flex-wrap:wrap;gap:24px">
+    <span class="links">
       <a href="mailto:hello@vulaflowsa.co.za">hello@vulaflowsa.co.za</a>
       <a href="privacy.html">Privacy</a>
-      
     </span>
   </div>
 </footer>
 
+<script src="landing.js"></script>
 </body>
 </html>
