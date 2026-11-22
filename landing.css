@@ -89,7 +89,7 @@ h1,h2{text-wrap:balance}
 .mid p.sub,.vdoor p.desc{text-wrap:pretty;hyphens:auto;hyphenate-limit-chars:7 3 3}
 
 /* The one reply line */
-.reply-note{margin:24px auto 0;text-align:center;font-size:14px;line-height:1.4;color:#4A5B6C}
+.reply-note{margin:24px auto 0;text-align:center;font-size:14px;line-height:1.4;color:var(--body)}
 
 /* ---- Interactive hover button (plain CSS version of the shadcn component) ---- */
 .ihb{
@@ -105,7 +105,7 @@ h1,h2{text-wrap:balance}
   color:var(--paper);opacity:0;transform:translateX(48px);transition:transform .3s,opacity .3s
 }
 .ihb .dot{
-  position:absolute;left:8%;top:40%;width:8px;height:8px;border-radius:8px;
+  position:absolute;left:8%;top:40%;width:8px;height:8px;border-radius:4px;
   transform:scale(1);transition:all .3s
 }
 .vdoor-buyer .ihb .dot{background:var(--accent)}
@@ -121,7 +121,7 @@ h1,h2{text-wrap:balance}
   .ihb .t,.ihb .h,.ihb .dot{transition:none}
 }
 
-.site-foot{border-top:1px solid rgba(15,42,67,.14);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:#4A5B6C}
+.site-foot{border-top:1px solid var(--line);padding:32px 0 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:14px;color:var(--body)}
 .site-foot span.links{display:flex;flex-wrap:wrap;gap:24px}
 
 /* ============ Story mode (JavaScript on, motion allowed) ============ */
@@ -159,7 +159,7 @@ h1,h2{text-wrap:balance}
   position:absolute;left:calc(50% + var(--ox));top:52%;
   width:var(--dw);height:calc(var(--dw)*1.32);
   margin:calc(var(--dw)*-.66) 0 0 calc(var(--dw)/-2);
-  border-radius:8px;opacity:0;will-change:transform,opacity;
+  border-radius:4px;opacity:0;will-change:transform,opacity;
   box-shadow:0 14px 34px rgba(15,42,67,.18);
 }
 .doc .bar{position:absolute;left:14%;top:9%;width:38%;height:4.4%;border-radius:3px;background:currentColor;opacity:.45}
@@ -170,7 +170,7 @@ h1,h2{text-wrap:balance}
 .doc .ln:nth-of-type(5){top:48%;width:48%}
 .doc-1{--ox:calc(var(--dw)*-1.15);background:var(--ink);color:var(--paper)}
 .doc-2{--ox:0px;background:var(--terracotta-dark);color:#FFFFFF}
-.doc-3{--ox:calc(var(--dw)*1.15);background:var(--sand);color:var(--ink);border:1px solid rgba(15,42,67,.14)}
+.doc-3{--ox:calc(var(--dw)*1.15);background:var(--sand);color:var(--ink);border:1px solid var(--line)}
 
 /* Scroll cue */
 .js-story .scroll-cue{
