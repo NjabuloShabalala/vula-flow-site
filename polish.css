@@ -26,3 +26,6 @@ sub{bottom:-.2em}
 
 /* Card titles: cap at 3 lines so grid rows stay aligned */
 .ct{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+
+/* Visually hidden, still read by screen readers (used on icon-only matrix cells) */
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

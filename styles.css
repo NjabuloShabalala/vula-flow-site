@@ -9,6 +9,7 @@
 @font-face{font-family:'Jost';src:url(fonts/jost-latin-700-normal.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:'Caprasimo';src:url(fonts/caprasimo-latin-400-normal.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
 :root{
+  --line:rgba(15,42,67,.14);--line-strong:rgba(15,42,67,.2);--control:rgba(15,42,67,.4);--body:#3D4F61;
   --font-display:'Cooper BT','Caprasimo',Georgia,serif;
   --font-body:'ITC Avant Garde Gothic','Avant Garde','Jost',system-ui,sans-serif;
 }
